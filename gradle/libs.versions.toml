@@ -25,6 +25,8 @@ chucker = "4.2.0"
 
 # Async / Coroutines
 coroutines = "1.10.2"
+appcompat = "1.7.1"
+material = "1.13.0"
 
 
 appcompat = "1.7.1"

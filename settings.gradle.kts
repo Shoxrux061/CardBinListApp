@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "CardBinListApp"
 include(":app")
 include(":shared-core")
+include(":shared-di")

@@ -28,10 +28,6 @@ coroutines = "1.10.2"
 appcompat = "1.7.1"
 material = "1.13.0"
 
-
-appcompat = "1.7.1"
-material = "1.13.0"
-
 [libraries]
 # Core
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

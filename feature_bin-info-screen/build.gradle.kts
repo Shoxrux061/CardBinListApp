@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.ui.tooling.preview)
     debugImplementation(libs.ui.tooling)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
     //Serialization
     implementation(libs.converter.moshi)

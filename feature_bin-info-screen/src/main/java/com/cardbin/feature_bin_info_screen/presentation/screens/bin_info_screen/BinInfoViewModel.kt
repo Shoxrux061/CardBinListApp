@@ -1,10 +1,11 @@
 package com.cardbin.feature_bin_info_screen.presentation.screens.bin_info_screen
 
+import androidx.compose.ui.text.TextRange
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cardbin.feature_bin_info_screen.domain.use_case.GetCardBinInfoUseCase
 import com.cardbin.feature_bin_info_screen.presentation.screens.bin_info_screen.state.BinInfoScreenUiState
-import com.cardbin.shared_core.handler.ErrorHandler
 import com.cardbin.shared_core.handler.onResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,10 +24,12 @@ class BinInfoViewModel @Inject constructor(
 
     fun getCardBinInfo(bin: String) {
 
+        _uiState.update {
+            it.copy(isLoading = true)
+        }
+
         viewModelScope.launch {
-
             try {
-
                 useCase.invoke(bin).onResult(
                     onSuccess = { result ->
                         _uiState.update { currentState ->
@@ -57,4 +60,20 @@ class BinInfoViewModel @Inject constructor(
             }
         }
     }
+
+    fun changeTextFieldValue(newText: String) {
+
+        val digits = newText.filter { it.isDigit() }.take(8)
+        val formatted = digits.chunked(4).joinToString(" ")
+
+        _uiState.update {
+            it.copy(
+                textValue = TextFieldValue(
+                    text = formatted,
+                    selection = TextRange(formatted.length)
+                )
+            )
+        }
+    }
+
 }

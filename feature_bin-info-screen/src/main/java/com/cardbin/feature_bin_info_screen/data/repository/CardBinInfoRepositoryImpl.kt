@@ -8,7 +8,7 @@ import com.cardbin.shared_core.handler.NetworkResult
 import com.cardbin.shared_core.handler.safeApiCall
 import javax.inject.Inject
 
-class CardBinInfoRepositoryInfo @Inject constructor(
+class CardBinInfoRepositoryImpl @Inject constructor(
     private val service: BinInfoService
 ) : CardInfoRepository {
 

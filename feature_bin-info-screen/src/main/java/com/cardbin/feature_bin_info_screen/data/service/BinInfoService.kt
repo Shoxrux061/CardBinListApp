@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface BinInfoService {
 
     @GET("{bin}")
-    fun getBinInfo(
+    suspend fun getBinInfo(
         @Path("bin")
         bin: String
     ): Response<CardInfoResponseDTO>

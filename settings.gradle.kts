@@ -23,3 +23,4 @@ rootProject.name = "CardBinListApp"
 include(":app")
 include(":shared-di")
 include(":shared-core")
+include(":feature_card-history")

@@ -1,6 +1,7 @@
 package com.cardbin.feature_card_history.di
 
-import com.cardbin.feature_card_history.data.local.room.CardInfoDao
+import com.cardbin.shareed_data.local.room.local.room.CardInfoDao
+
 import com.cardbin.feature_card_history.data.repository.CardInfoHistoryRepositoryImpl
 import com.cardbin.feature_card_history.domain.repository.CardInfoHistoryRepository
 import com.cardbin.feature_card_history.domain.use_case.GetCardInfoHistoryUseCase

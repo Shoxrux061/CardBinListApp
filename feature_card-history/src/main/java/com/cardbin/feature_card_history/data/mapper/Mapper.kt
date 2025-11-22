@@ -1,10 +1,10 @@
 package com.cardbin.feature_card_history.data.mapper
 
-import com.cardbin.feature_card_history.data.local.room.CardInfoEntity
 import com.cardbin.feature_card_history.domain.models.BankUi
 import com.cardbin.feature_card_history.domain.models.CardInfoUi
 import com.cardbin.feature_card_history.domain.models.CountryUi
 import com.cardbin.feature_card_history.domain.models.NumberUi
+import com.cardbin.shareed_data.local.room.local.room.CardInfoEntity
 
 fun CardInfoEntity.toDomain(): CardInfoUi {
 

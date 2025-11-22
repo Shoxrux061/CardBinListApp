@@ -41,6 +41,7 @@ dependencies {
 
     implementation(project(":shared-core"))
     implementation(project(":shared-di"))
+    implementation(project(":shared-data"))
 
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui)

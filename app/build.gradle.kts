@@ -66,4 +66,11 @@ dependencies {
 
     //Navigation
     implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(project(":shared-di"))
+    implementation(project(":feature_card-history"))
+
+    implementation(project(":shared-core"))
+    implementation(project(":shared-di"))
+    implementation(project(":feature_bin-info-screen"))
 }

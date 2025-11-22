@@ -21,3 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "CardBinListApp"
 include(":app")
+include(":shared-di")
+include(":shared-core")
+include(":feature_card-history")
+include(":shared-di")
+include(":feature_bin-info-screen")
+include(":shared-data")

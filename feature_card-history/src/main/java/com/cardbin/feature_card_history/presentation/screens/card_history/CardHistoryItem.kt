@@ -57,17 +57,18 @@ fun CardInfoContainer(
         )
     ) {
 
-        LazyColumn(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
                     20.dp
                 ),
-            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            items(map.entries.toList()) { entry ->
+
+            map.entries.toList().forEachIndexed { _, entry ->
+
                 CardInfoItem(
-                    modifier = Modifier.padding(horizontal = 16.dp),
+                    modifier = Modifier.padding(vertical = 10.dp),
                     pref = entry.key,
                     info = entry.value
                 )

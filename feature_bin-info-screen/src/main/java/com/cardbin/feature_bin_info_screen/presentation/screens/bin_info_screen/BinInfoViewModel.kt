@@ -25,7 +25,11 @@ class BinInfoViewModel @Inject constructor(
     fun getCardBinInfo(bin: String) {
 
         _uiState.update {
-            it.copy(isLoading = true)
+            it.copy(
+                isLoading = true,
+                cardInfo = null,
+                textValue = TextFieldValue("")
+            )
         }
 
         viewModelScope.launch {

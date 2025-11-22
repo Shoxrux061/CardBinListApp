@@ -19,7 +19,11 @@ class CardHistoryViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(CardHistoryScreenState())
     val uiState: StateFlow<CardHistoryScreenState> = _uiState
 
-    fun getCardInfoHistory() {
+    init {
+        getCardInfoHistory()
+    }
+
+    private fun getCardInfoHistory() {
 
         viewModelScope.launch {
 

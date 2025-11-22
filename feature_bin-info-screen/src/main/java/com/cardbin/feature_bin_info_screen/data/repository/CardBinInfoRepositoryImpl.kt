@@ -21,7 +21,7 @@ class CardBinInfoRepositoryImpl @Inject constructor(
             mapper = { dto -> dto.toDomain(bin) }
         )
 
-        if (result is NetworkResult.Success) {
+        if (result is NetworkResult.Success && result.data.scheme != null) {
             dao.insert(result.data.toEntity())
         }
 

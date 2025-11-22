@@ -8,6 +8,7 @@ import com.cardbin.feature_bin_info_screen.domain.models.BankUi
 import com.cardbin.feature_bin_info_screen.domain.models.CardInfoUi
 import com.cardbin.feature_bin_info_screen.domain.models.CountryUi
 import com.cardbin.feature_bin_info_screen.domain.models.NumberUi
+import com.cardbin.shareed_data.local.room.local.room.CardInfoEntity
 
 fun BankDTO.toDomain(): BankUi {
     return BankUi(
@@ -37,7 +38,7 @@ fun NumberDTO.toDomain(): NumberUi {
     )
 }
 
-fun CardInfoResponseDTO.toDomain(): CardInfoUi {
+fun CardInfoResponseDTO.toDomain(bin: String): CardInfoUi {
 
     return CardInfoUi(
         bank = bank?.toDomain(),
@@ -46,7 +47,8 @@ fun CardInfoResponseDTO.toDomain(): CardInfoUi {
         number = number?.toDomain(),
         prepaid = prepaid,
         scheme = scheme,
-        type = type
+        type = type,
+        bin = bin
     )
 
 }
@@ -82,4 +84,29 @@ fun CardInfoUi.toMap(): Map<String, String> {
     }
 
     return map
+}
+
+fun CardInfoUi.toEntity(): CardInfoEntity {
+
+    return CardInfoEntity(
+        bin = bin,
+        brand = brand,
+        prepaid = prepaid,
+        scheme = scheme,
+        type = type,
+        bankCity = bank?.city,
+        bankName = bank?.name,
+        bankPhone = bank?.phone,
+        bankUrl = bank?.url,
+        numberLuhn = number?.luhn,
+        numberLength = number?.length,
+        countryName = country?.name,
+        countryCurrency = country?.currency,
+        countryLatitude = country?.latitude,
+        countryLongitude = country?.longitude,
+        countryAlpha2 = country?.alpha2,
+        countryEmoji = country?.emoji,
+        countryNumeric = country?.numeric
+    )
+
 }

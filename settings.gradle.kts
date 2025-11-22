@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CardBinListApp"
 include(":app")
+include(":shareed-data")

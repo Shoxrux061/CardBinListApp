@@ -4,6 +4,7 @@ import com.cardbin.feature_bin_info_screen.data.repository.CardBinInfoRepository
 import com.cardbin.feature_bin_info_screen.data.service.BinInfoService
 import com.cardbin.feature_bin_info_screen.domain.repository.CardInfoRepository
 import com.cardbin.feature_bin_info_screen.domain.use_case.GetCardBinInfoUseCase
+import com.cardbin.shareed_data.local.room.local.room.CardInfoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,8 +24,8 @@ object CardBinInfoModule {
 
     @Provides
     @Singleton
-    fun provideCardInfoRepository(service: BinInfoService): CardInfoRepository {
-        return CardBinInfoRepositoryImpl(service)
+    fun provideCardInfoRepository(service: BinInfoService, dao: CardInfoDao): CardInfoRepository {
+        return CardBinInfoRepositoryImpl(service, dao)
     }
 
     @Provides
